@@ -1,7 +1,6 @@
 isodate
 pymongo
-libpq-dev
-psycopg2
+psycopg2-binary
 pandas
 google-api-python-client
 streamlit
