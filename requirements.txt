@@ -1,0 +1,7 @@
+isodate
+pymongo
+psycopg2
+pandas
+google-api-python-client
+streamlit
+python-dotenv
