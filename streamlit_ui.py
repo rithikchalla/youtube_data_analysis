@@ -16,7 +16,56 @@ selection = st.sidebar.selectbox(
 st.title("Youtube Data Analysis")
 
 if selection == 'GetData':
+
     channel_ids = st.sidebar.text_input("Please Enter a channel Id or comma seperated Ids")
+
+    # Brief Usage Description
+    if not channel_ids:
+        st.markdown(
+        """
+
+        ## Features
+
+        ### 1. GetData
+        - Enter YouTube channel IDs (comma-separated) in the sidebar.
+        - Click the "Search" button to fetch information about the specified channels.
+        - Data is saved to MongoDB.
+
+        ### 2. Migrate Data to Warehouse
+        - Select channels from the ones available in the data lake for migration.
+        - Click the "Migrate to Data Warehouse" button to move data to PostgreSQL.
+
+        ### 3. Analyze Data
+        Three data analysis sections:
+        1. **Video and Channel Names**
+        2. **Channels with Most Videos**
+        3. **Top 10 Most Viewed Videos**
+
+        Each section has an expander for detailed analysis with SQL queries.
+
+        ## Data Storage
+
+        - MongoDB is used for storing raw channel data.
+        - PostgreSQL is used for data warehousing.
+
+        ## Configuration
+
+        ### YouTube Data API Key
+
+        Make sure to replace `YOUR_YOUTUBE_API_KEY` in the `.env` file with a valid YouTube Data API key.
+
+        ### MongoDB and PostgreSQL Connection
+
+        Update the MongoDB URI and PostgreSQL connection details in the `.env` file.
+
+        ## Issues and Contributions
+
+        If you encounter any issues or would like to contribute, feel free to open an issue or create a pull request.
+
+        Happy coding!
+        """
+    )
+
 
     if st.sidebar.button('Search'):
         try:
