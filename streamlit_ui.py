@@ -1,5 +1,5 @@
 import streamlit as st
-import youtube_data as yt
+import streamlit_api as yt
 import pandas as pd
 
 if 'mongo_collection' not in st.session_state:
